@@ -30,7 +30,9 @@ function csv2json(csv) {
 function json2csv(json) {
   var opts = arguments.length <= 1 || arguments[1] === undefined ? { delimiter: ';' } : arguments[1];
 
-  var preparedJson = (0, _lodash2.default)(json).castArray().map(_flat2.default).value();
+  var data = (0, _lodash2.default)(json).castArray().map(_flat2.default).value();
 
-  return _babyparse2.default.unparse(preparedJson, opts);
+  var fields = (0, _lodash2.default)(data).map(_lodash2.default.keys).flatten().uniq().value();
+
+  return _babyparse2.default.unparse({ fields: fields, data: data }, opts);
 }

@@ -21,10 +21,11 @@ test('json2csv returns valid CSV', t => {
         numericField: 456,
       },
       array: [3, 4, 'bar'],
+      anotherField: 'foo',
     },
   ];
   const csv = json2csv(json);
-  t.is(csv, 'field;object.field;object.anotherField;object.numericField;array.0;array.1;array.2\r\nfoo;bar;foo;123;1;2;foo\r\nbar;;;456;3;4;bar');
+  t.is(csv, 'field;object.field;object.anotherField;object.numericField;array.0;array.1;array.2;anotherField\r\nfoo;bar;foo;123;1;2;foo;\r\nbar;;;456;3;4;bar;foo');
 });
 
 test('json2csv works with simple object', t => {

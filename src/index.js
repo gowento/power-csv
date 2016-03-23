@@ -10,10 +10,16 @@ export function csv2json(csv, opts = { header: true, skipEmptyLines: true, dynam
 }
 
 export function json2csv(json, opts = { delimiter: ';' }) {
-  const preparedJson = _(json)
+  const data = _(json)
     .castArray()
     .map(flatten)
     .value();
 
-  return Baby.unparse(preparedJson, opts);
+  const fields = _(data)
+    .map(_.keys)
+    .flatten()
+    .uniq()
+    .value();
+
+  return Baby.unparse({ fields, data }, opts);
 }
