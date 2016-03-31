@@ -1,6 +1,6 @@
 {
   "name": "power-csv",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Helpers to deal with CSV format",
   "main": "dist/index.js",
   "files": [
