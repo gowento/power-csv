@@ -1,21 +1,21 @@
-# gowento-csv
+# power-csv
 
 > Helpers to deal with CSV format
 
 ## Install
 
 ```sh
-npm i -D gowento-csv
+npm i -D power-csv
 ```
 
 ## Usage
 
 ```js
-import gowentoCsv from "gowento-csv"
+import gowentoCsv from "power-csv"
 
 gowentoCsv() // true
 ```
 
 ## License
 
-MIT © [Loris Guignard](https://bitbucket.org/gowento)
+MIT © [Gowento](https://github.com/gowento)

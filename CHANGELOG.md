@@ -8,4 +8,4 @@
 
 ### v1.0.0
 
- * gowento-csv initial commit.
+ * power-csv initial commit.

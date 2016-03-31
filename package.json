@@ -1,5 +1,5 @@
 {
-  "name": "gowento-csv",
+  "name": "power-csv",
   "version": "1.0.0",
   "description": "Helpers to deal with CSV format",
   "main": "dist/index.js",
@@ -36,11 +36,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:gowento/gowento-csv.git"
+    "url": "git@github.com:gowento/power-csv.git"
   },
   "author": "Loris Guignard <loris.guignard@gmail.com>",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/gowento/gowento-csv#readme",
+  "homepage": "https://github.com/gowento/power-csv#readme",
   "devDependencies": {
     "ava": "0.13.0",
     "babel-cli": "6.6.5",
