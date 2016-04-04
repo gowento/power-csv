@@ -2,14 +2,16 @@ import Baby from 'babyparse';
 import flatten, { unflatten } from 'flat';
 import _ from 'lodash';
 
-export function csv2json(csv, opts = { header: true, skipEmptyLines: true, dynamicTyping: true }) {
-  const results = Baby.parse(csv, opts);
+export function csv2json(csv, opts = {}) {
+  const options = _.defaults(opts, { header: true, skipEmptyLines: true });
+  const results = Baby.parse(csv, options);
   return _(results.data)
     .map(unflatten)
     .value();
 }
 
-export function json2csv(json, opts = { delimiter: ';' }) {
+export function json2csv(json, opts = {}) {
+  const options = _.defaults(opts, { delimiter: ';' });
   const data = _(json)
     .castArray()
     .map(flatten)
@@ -21,7 +23,7 @@ export function json2csv(json, opts = { delimiter: ';' }) {
     .uniq()
     .value();
 
-  return Baby.unparse({ fields, data }, opts);
+  return Baby.unparse({ fields, data }, options);
 }
 
 function expressDecorator(rawData, filename = 'res.csv', opts) {

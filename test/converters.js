@@ -61,18 +61,31 @@ test('csv2json returns valid JSON', t => {
       object: {
         field: 'bar',
         anotherField: 'foo',
-        numericField: 123,
+        numericField: '123',
       },
-      array: [1, 2, 'foo'],
+      array: ['1', '2', 'foo'],
     },
     {
       field: 'bar',
       object: {
         field: '',
         anotherField: '',
-        numericField: 456,
+        numericField: '456',
       },
-      array: [3, 4, 'bar'],
+      array: ['3', '4', 'bar'],
+    },
+  ]);
+});
+
+test('csv2json accepts custom opts', t => {
+  const csv = 'foo,bar.foo\r\n123,true';
+  const json = csv2json(csv, { dynamicTyping: true });
+  t.same(json, [
+    {
+      foo: 123,
+      bar: {
+        foo: true,
+      },
     },
   ]);
 });
