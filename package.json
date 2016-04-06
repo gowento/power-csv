@@ -65,7 +65,7 @@
     "babel-eslint": "6.0.2",
     "babyparse": "0.4.5",
     "eslint": "2.7.0",
-    "eslint-plugin-ava": "1.4.1",
+    "eslint-plugin-ava": "2.0.0",
     "flat": "2.0.0",
     "lodash": "4.8.2",
     "supertest-as-promised": "3.1.0"
