@@ -55,7 +55,7 @@ test('csv2json returns valid JSON', t => {
   const csv = 'field;object.field;object.anotherField;object.numericField;array.0;array.1;array.2\r\nfoo;bar;foo;123;1;2;foo\r\nbar;;;456;3;4;bar';
   const json = csv2json(csv);
   t.is(json.length, 2);
-  t.same(json, [
+  t.deepEqual(json, [
     {
       field: 'foo',
       object: {
@@ -80,7 +80,7 @@ test('csv2json returns valid JSON', t => {
 test('csv2json accepts custom opts', t => {
   const csv = 'foo,bar.foo\r\n123,true';
   const json = csv2json(csv, { dynamicTyping: true });
-  t.same(json, [
+  t.deepEqual(json, [
     {
       foo: 123,
       bar: {
