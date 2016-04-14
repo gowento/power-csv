@@ -55,7 +55,7 @@
     "eslint-config-airbnb": "6.2.0",
     "eslint-plugin-ava": "2.0.1",
     "express": "4.13.4",
-    "nyc": "6.2.1",
+    "nyc": "6.4.0",
     "rimraf": "2.5.2",
     "supertest": "1.2.0",
     "supertest-as-promised": "3.1.0",
