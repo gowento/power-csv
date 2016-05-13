@@ -26,7 +26,9 @@ test('json2csv returns valid CSV', t => {
     },
   ];
   const csv = json2csv(json);
+  /* eslint-disable max-len */
   t.is(csv, 'field;object.field;object.anotherField;object.numericField;array.0;array.1;array.2;anotherField\r\nfoo;bar;foo;123;1;2;foo;\r\nbar;;;456;3;4;bar;foo');
+  /* eslint-enable max-len */
 });
 
 test('json2csv works with simple object', t => {
@@ -52,7 +54,9 @@ test('json2csv accepts custom opts', t => {
 });
 
 test('csv2json returns valid JSON', t => {
+  /* eslint-disable max-len */
   const csv = 'field;object.field;object.anotherField;object.numericField;array.0;array.1;array.2\r\nfoo;bar;foo;123;1;2;foo\r\nbar;;;456;3;4;bar';
+  /* eslint-enable max-len */
   const json = csv2json(csv);
   t.is(json.length, 2);
   t.deepEqual(json, [

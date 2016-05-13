@@ -5,9 +5,8 @@ import _ from 'lodash';
 export function csv2json(csv, opts = {}) {
   const options = _.defaults(opts, { header: true, skipEmptyLines: true });
   const results = Baby.parse(csv, options);
-  return _(results.data)
-    .map(unflatten)
-    .value();
+
+  return _.map(results.data, unflatten);
 }
 
 export function json2csv(json, opts = {}) {
@@ -18,8 +17,7 @@ export function json2csv(json, opts = {}) {
     .value();
 
   const fields = _(data)
-    .map(_.keys)
-    .flatten()
+    .flatMap(_.keys)
     .uniq()
     .value();
 
